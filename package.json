@@ -1,6 +1,6 @@
 {
-  "name": "expaus",
-  "description": "expaus",
+  "name": "node-express-boilerplate",
+  "description": "node-boilerplate",
   "version": "0.1.0",
   "main": "server",
   "engines": {
@@ -19,5 +19,9 @@
     "passport-local": "^1.0.0",
     "request": "^2.44.0",
     "socket.io": "~1.3.7"
+  },
+  "author": {
+    "name": "sonipandey",
+    "email": "sonipandey.71@gmail.com"
   }
 }
