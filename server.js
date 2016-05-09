@@ -14,6 +14,6 @@ require('./server/routes')(app);
 
 var port = config.server.port;
 
-app.listen(port);
+app.listen(process.env.PORT || port);
 
 console.log('App started on port ' + port);
