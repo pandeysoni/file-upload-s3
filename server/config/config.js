@@ -8,7 +8,7 @@ module.exports = {
         port: 27017,
         db: 'demo',
         url: 'mongodb://username:password@host:port/databaseName'
-    }.
+    },
     url: {
             basePath: 'http://localhost:9999',
     }

@@ -14,10 +14,6 @@ app.use(express.static(path.join(__dirname, 'client/')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-require('./server/passport/local')(passport, config);
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 /** load routes*/
 app.get('/', function(req, res) {
@@ -26,7 +22,7 @@ app.get('/', function(req, res) {
 app.get('/credential', function(req, res) {
   res.json(req.session);
 });
-require('./server/routes')(app, passport);
+require('./server/routes')(app);
 
 var port = config.server.port;
 

@@ -1,14 +1,8 @@
 var User = require('./user.server.controller');
 
-module.exports = function(app, passport){
+module.exports = function(app){
 
     app.post('/user', User.create );
-    app.post('/login',
-    passport.authenticate('local', {
-      failureRedirect: '/#!/home',
-    }), User.login);
-
-    app.get('/logout', User.logout);
 }
 
 function ensureAuthenticated(req, res, next) {
