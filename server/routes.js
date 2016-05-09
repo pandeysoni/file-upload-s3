@@ -29,10 +29,12 @@ var sendMail = function(data, res){
 	    if(error){
 	        return console.log(error);
 	    }
-	    res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "X-Requested-With");
-	    return res.send('success');
-	    console.log('Message sent: ' + info.response);
+	    else{	
+		    res.header("Access-Control-Allow-Origin", "*");
+	        res.header("Access-Control-Allow-Headers", "X-Requested-With");
+		    res.send('success');
+		    console.log('Message sent: ' + info.response);
+	    }
 	});
 };
  
