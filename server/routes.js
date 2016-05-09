@@ -1,14 +1,14 @@
 var nodemailer = require('nodemailer');
  
 // create reusable transporter object using the default SMTP transport 
-var transporter = nodemailer.createTransport(({service: 'gmail',
+var transporter = nodemailer.createTransport({service: 'gmail',
   auth: {
-    XOAuth2: require('xoauth2').createXOAuth2Generator({
+    XOAuth2: {
         user: 'roy.dajshi@gmail.com',
         clientId: '58755763990-2e72ujpe368s7id8svohb70dbo8puuqg.apps.googleusercontent.com',
-        clientSecret: '01sNNvu7wxzfZBOzhFMKeUYO'
-      })
-  }}));
+        clientSecret: '01sNNvu7wxzfZBOzhFMKeUYO',
+      }
+  }});
  
 // setup e-mail data with unicode symbols 
 var sendMail = function(data, res){
