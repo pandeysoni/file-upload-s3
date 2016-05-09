@@ -3,16 +3,19 @@ var nodemailer = require('nodemailer');
 // create reusable transporter object using the default SMTP transport 
 var transporter = nodemailer.createTransport({service: 'gmail',
   host: 'http://mailsendapp.herokuapp.com',
-  auth: {
-  	user: 'roy.dajshi@gmail.com',
+  ssl: true,
+   use_authentication: true,
+   	user: 'roy.dajshi@gmail.com',
   	pass: 'dajshi123'
-    // XOAuth2: require("xoauth2").createXOAuth2Generator({
-    //     user: 'roy.dajshi@gmail.com',
-    //     clientId: '58755763990-2e72ujpe368s7id8svohb70dbo8puuqg.apps.googleusercontent.com',
-    //     clientSecret: '01sNNvu7wxzfZBOzhFMKeUYO',
-	   //  refreshToken: "1/xEoDL4iW3cxlI7yDbSRFYNG01kVKM2C-259HOF2aQbI"
-    //   })
-  }
+  // auth: {
+  
+  //   // XOAuth2: require("xoauth2").createXOAuth2Generator({
+  //   //     user: 'roy.dajshi@gmail.com',
+  //   //     clientId: '58755763990-2e72ujpe368s7id8svohb70dbo8puuqg.apps.googleusercontent.com',
+  //   //     clientSecret: '01sNNvu7wxzfZBOzhFMKeUYO',
+	 //   //  refreshToken: "1/xEoDL4iW3cxlI7yDbSRFYNG01kVKM2C-259HOF2aQbI"
+  //   //   })
+  // }
 });
  
 // setup e-mail data with unicode symbols 
