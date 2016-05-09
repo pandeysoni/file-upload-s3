@@ -1,16 +1,19 @@
 var nodemailer = require('nodemailer');
- 
+var generator = require("xoauth2").createXOAuth2Generator({
+			        user: 'roy.dajshi@gmail.com',
+			        clientId: '58755763990-2e72ujpe368s7id8svohb70dbo8puuqg.apps.googleusercontent.com',
+			        clientSecret: '01sNNvu7wxzfZBOzhFMKeUYO',
+				    refreshToken: '1/KEPPLoEtrGDZ7AA2ZlRsm7NTJIirHDOUYiU1yu652T190RDknAdJa_sgfheVM0XT',
+				    accessToken: 'ya29.CjHdApVbTJbt5RX9u3_ZRY9psr0OsEuoIMHJWplz6uX9gS5wB6r1hi-5PJHAVrpFEh30'
+			      });
+
+generator.on('token', function(token){
+    console.log('New token for %s: %s', token.user, token.accessToken);
+});
 // create reusable transporter object using the default SMTP transport 
 var transporter = nodemailer.createTransport({service: 'gmail',
   auth: {
-    XOAuth2: require("xoauth2").createXOAuth2Generator({
-        user: 'roy.dajshi@gmail.com',
-        clientId: '58755763990-2e72ujpe368s7id8svohb70dbo8puuqg.apps.googleusercontent.com',
-        clientSecret: '01sNNvu7wxzfZBOzhFMKeUYO',
-	    refreshToken: 'saladus',
-    	accessToken: 'abc',
-        timeout: 3600
-      })
+    xoauth2: generator
   }
 });
  
