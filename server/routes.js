@@ -1,10 +1,11 @@
+var config = require('./config/config');
 var nodemailer = require('nodemailer');
 var generator = require("xoauth2").createXOAuth2Generator({
-			        user: 'roy.dajshi@gmail.com',
-			        clientId: '58755763990-2e72ujpe368s7id8svohb70dbo8puuqg.apps.googleusercontent.com',
-			        clientSecret: '01sNNvu7wxzfZBOzhFMKeUYO',
-				    refreshToken: '1/KEPPLoEtrGDZ7AA2ZlRsm7NTJIirHDOUYiU1yu652T190RDknAdJa_sgfheVM0XT',
-				    accessToken: 'ya29.CjHdApVbTJbt5RX9u3_ZRY9psr0OsEuoIMHJWplz6uX9gS5wB6r1hi-5PJHAVrpFEh30'
+			        user: config.nodemailer.user,
+			        clientId: config.nodemailer.clientId,
+			        clientSecret: config.nodemailer.clientSecret,
+				    refreshToken: config.nodemailer.refreshToken,
+				    accessToken: config.nodemailer.accessToken
 			      });
 
 generator.on('token', function(token){
@@ -20,9 +21,9 @@ var transporter = nodemailer.createTransport({service: 'gmail',
 // setup e-mail data with unicode symbols 
 var sendMail = function(data, res){
 	var mailOptions = {
-	    from: '"github.io 👥" <barmeshwar.1432@gmail.com>', // sender address 
-	    to: 'sonipandey.71@gmail.com', // list of receivers 
-	    subject: 'Hello ✔', // Subject line 
+	    from: '"github.io 👥" <'+config.nodemailer.user+'>', // sender address 
+	    to: ''+config.nodemailer.receiver+'', // list of receivers 
+	    subject: 'Message from your github.io ✔', // Subject line 
 	    html: "Hello,<br> You have received a mail from:<br>Name: "+data.Name +"<br>Email: "+ data.Email +"<br>Message: "+ data.Message+"<br>", // plaintext body 
 	}
 	transporter.sendMail(mailOptions, function(error, info){
