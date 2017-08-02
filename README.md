@@ -1,4 +1,4 @@
-Boilerplate using node express framework
+AWS S3 File upload via Nodejs (Express Framework)
 
 ### Install an app
 

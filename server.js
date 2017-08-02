@@ -1,8 +1,8 @@
-var express = require('express'),
-    Routes = require('./server/routes'),
-    config = require('./server/config/config'),
-    bodyParser = require('body-parser'),
-    app = express();
+const express = require('express')
+const Routes = require('./server/routes')
+const config = require('./server/config/config')
+const bodyParser = require('body-parser')
+const app = express()
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
