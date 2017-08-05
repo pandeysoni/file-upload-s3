@@ -36,8 +36,6 @@ const createItemObject = (callback) => {
         Bucket: bucketName, 
         Key: `${imageName}`, 
         ACL: 'public-read',
-        ContentEncoding: 'base64',
-        ContentType: 'image/png',
         Body:image
     };
 	s3.putObject(params, function (err, data) {
