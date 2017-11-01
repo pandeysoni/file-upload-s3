@@ -11,7 +11,7 @@
     "aws-sdk": "^2.88.0",
     "body-parser": "^1.17.2",
     "connect-multiparty": "^2.0.0",
-    "express": "^4.15.3",
+    "express": "^4.15.3"
   },
   "author": {
     "name": "sonipandey",
